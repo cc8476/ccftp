@@ -1,0 +1,27 @@
+{
+  "name": "ccftp",
+  "version": "1.0.4",
+  "description": "uploading files through sftp by cli",
+  "main": "index.js",
+  "bin": {
+    "ccftp": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "joechen",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^6.1.0",
+    "execa": "^4.1.0",
+    "ipt": "^3.1.1",
+    "readline-promise": "^1.0.4",
+    "ssh2-sftp-client": "^5.3.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.1",
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1"
+  }
+}
