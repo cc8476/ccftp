@@ -58,7 +58,7 @@ function writeFTPConfig(json) {
         flag: 'w+'
     }, (err) => {
         if (err) throw err;
-        console.log('文件已被保存');
+        console.log('sftp.json is saved'.green);
     });
 }
 
@@ -132,7 +132,7 @@ function writeFilesConfig(json) {
         flag: 'a+'
     }, (err) => {
         if (err) throw err;
-        console.log('文件已被保存');
+        console.log('files.json is saved'.green);
     });
 }
 
@@ -162,11 +162,11 @@ function serialFtp() {
         }
     ).then(
         (answer) => {
-            return question("password", ftpConfig)
+            return question("password", ftpConfig,"","write your passport")
         }
     ).then(
         (answer) => {
-            return question("privateKey", ftpConfig)
+            return question("privateKey", ftpConfig,"","write your privateKey path")
         }
     ).then(
         (answer) => {
@@ -200,9 +200,10 @@ function serialFiles() {
 }
 
 
-function question(title, ftpConfig, addtional) {
+function question(title, ftpConfig, addtional="",addtionalTitle="") {
     return new Promise((resolve) => {
-        rl.question(title + "==>", answer => {
+        let otherTitle = addtionalTitle?"["+addtionalTitle+"]":""
+        rl.question(title +otherTitle.green+ "==>", answer => {
             if (addtional) {
                 answer = answer + addtional
             }

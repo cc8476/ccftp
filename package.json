@@ -1,6 +1,6 @@
 {
   "name": "ccftp",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "uploading files through sftp by cli",
   "main": "index.js",
   "bin": {
@@ -9,8 +9,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "homepage": "https://github.com/cc8476/ccftp",
   "author": "joechen",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cc8476/ccftp"
+  },
+  "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0",
     "commander": "^6.1.0",

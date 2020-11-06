@@ -18,10 +18,10 @@ let fs = require("fs");
 
 
 let param = process.argv[2]; //命令行第一个参数
-console.log("param", param)
 switch (param) {
     case "-ftp":
-        console.log("config");
+        console.log("config your ftp settings".yellow);
+        console.log("just select passport or privateKey to write down".yellow);
         utils.serialFtp().then((result) => {
             utils.writeFTPConfig(JSON.stringify(result))
         })
