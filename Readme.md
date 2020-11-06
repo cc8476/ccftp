@@ -1,7 +1,7 @@
 Description
 ===========
 
-ccftp is cli tool to finish your ftp work through cli
+ccftp is a cli tool to finish your ftp work through cli
 
 
 Requirements
@@ -33,7 +33,7 @@ ccftp -files    //follow the instruments
 
 
 
-step2. enjoy this cli -tools
+step2. enjoy this cli -tool
 ```
 ccftp
 ```
@@ -42,7 +42,7 @@ ccftp
 other cmd
 =============
 ```
--help             >>> cshow all the cmds
+-help              >>> show all the cmds
 -clear             >>> clear your settings 
 -view              >>> show your settings
 ```
