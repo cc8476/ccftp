@@ -21,17 +21,16 @@ How to use
 step1. config your ftp settings and paths settings
 
 ```
-ccftp -ftp  
+ccftp -ftp   //follow the instruments
 ```
-follow the instruments
 
 
 
 
 ```
-ccftp -files  
+ccftp -files    //follow the instruments
 ```
-follow the instruments
+
 
 
 step2. enjoy this cli -tools
@@ -42,7 +41,8 @@ ccftp
 
 other cmd
 =============
+```
 -help             >>> cshow all the cmds
 -clear             >>> clear your settings 
 -view              >>> show your settings
-
+```
