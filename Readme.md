@@ -1,7 +1,7 @@
 Description
 ===========
 
-ccftp is cli tool to finish your ftp work through cli
+an interactive cli tool to finish your ftp work ,if you want to  upload only a few specific paths
 
 
 Requirements

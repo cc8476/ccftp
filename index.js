@@ -4,9 +4,10 @@ var colors = require('colors');
 const utils = require('./utils.js');
 let fs = require("fs");
 
+const os = require('os');
+let platform = os.platform() //darwin  win32
 //test .........................................
 //test .........................................
-
 
 //test .........................................
 //test .........................................
@@ -34,9 +35,7 @@ switch (param) {
         console.log("-view              >>> show your settings".yellow);
         console.log("default(no param)  >>> choose one to upload ".yellow);
 
-
-
-
+        process.exit(0);
         break;
     case '-view':
 
@@ -50,8 +49,13 @@ switch (param) {
             switch (Number(order)) {
                 case 0:
                     var exec = require('child_process').exec;
-                    console.log("__dirname", __dirname)
-                    var cmd = 'open ' + __dirname;
+                    var cmd = ''
+                    if(platform=='win32') {
+                        cmd = 'explorer '+ __dirname;
+                    }
+                    else {
+                        cmd = 'open ' + __dirname;
+                    }
                     exec(cmd);
                     break;
                 case 1:
@@ -75,7 +79,8 @@ switch (param) {
 
 
     case "-files":
-        console.log("file");
+        console.log("config your paths...".yellow);
+        console.log("paths format like this  /usr/abc/  or  c:/usr/abc ,not using '\\' ".yellow);
         utils.serialFiles().then((result) => {
 
             utils.writeFilesConfig(JSON.stringify(result))

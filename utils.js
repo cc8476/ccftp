@@ -59,6 +59,7 @@ function writeFTPConfig(json) {
     }, (err) => {
         if (err) throw err;
         console.log('sftp.json is saved'.green);
+        process.exit(0);
     });
 }
 
@@ -99,21 +100,22 @@ function upload({
         }
     }
 
-    console.log("connectObj",connectObj)
-
     sftp.connect(connectObj).then(data => {
         console.log('the data info:connected');
 
         sftp.put(local, remote).then(() => {
             console.log("upload done!".green)
+            process.exit(0);
 
         }).catch((e) => {
             console.log("catch", e)
+            process.exit(0);
         })
 
 
     }).catch(err => {
         console.log(err, 'catch error');
+        process.exit(0);
     });
 }
 
@@ -133,6 +135,7 @@ function writeFilesConfig(json) {
     }, (err) => {
         if (err) throw err;
         console.log('files.json is saved'.green);
+        process.exit(0);
     });
 }
 
@@ -162,7 +165,7 @@ function serialFtp() {
         }
     ).then(
         (answer) => {
-            return question("password", ftpConfig,"","write your passport")
+            return question("password", ftpConfig,"","write your passport or you can choose privateKey path")
         }
     ).then(
         (answer) => {
@@ -207,6 +210,8 @@ function question(title, ftpConfig, addtional="",addtionalTitle="") {
             if (addtional) {
                 answer = answer + addtional
             }
+
+           // answer = answer.replace("\",)
             ftpConfig[title] = answer;
             resolve(answer)
         });
